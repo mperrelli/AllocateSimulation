@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+// Structure declarations
+struct partition
+{
+	int size;
+	int waste;
+	struct partition *next;
+};
+
+struct process
+{
+	int size;
+	struct process *next;
+};
+
+// Function declarations
+void printPartitionList(struct partition *head);
+void printProcessList(struct process *head);
+void printStatus(struct partition *head, int partitions, int cycle);
+void sortPartitions(struct partition *head);
+void sortProcesses(struct process *head);
+void allocate_bestFit(struct process *procHead, struct partition *partHead, int partitions);
+void allocate_firstFit(struct process *procHead, struct partition *partHead, int partitions);
